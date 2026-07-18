@@ -13,6 +13,7 @@
     "url": "https://github.com/jeffersongoncalves/external-terminal-launcher/issues"
   },
   "homepage": "https://github.com/jeffersongoncalves/external-terminal-launcher#readme",
+  "icon": "resources/icon.png",
   "keywords": ["terminal", "warp", "windows-terminal", "wezterm", "alacritty", "kitty"],
   "engines": {
     "vscode": "^1.85.0"
