@@ -1,0 +1,88 @@
+{
+  "name": "jsg-external-terminal-launcher",
+  "displayName": "JSG External Terminal Launcher",
+  "description": "Open Warp, Windows Terminal, WezTerm, Alacritty or kitty at the workspace root",
+  "version": "0.1.0",
+  "publisher": "JeffersonGoncalves",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jeffersongoncalves/external-terminal-launcher.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jeffersongoncalves/external-terminal-launcher/issues"
+  },
+  "homepage": "https://github.com/jeffersongoncalves/external-terminal-launcher#readme",
+  "keywords": ["terminal", "warp", "windows-terminal", "wezterm", "alacritty", "kitty"],
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": ["Other"],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "externalTerminal.open",
+        "title": "Open External Terminal",
+        "category": "External Terminal",
+        "icon": "$(terminal)"
+      }
+    ],
+    "menus": {
+      "commandPalette": [
+        { "command": "externalTerminal.open" }
+      ]
+    },
+    "configuration": {
+      "title": "External Terminal Launcher",
+      "properties": {
+        "externalTerminal.selectedTerminalId": {
+          "type": "string",
+          "enum": ["warp", "windows-terminal", "wezterm", "alacritty", "kitty"],
+          "enumDescriptions": ["Warp", "Windows Terminal", "WezTerm", "Alacritty", "kitty"],
+          "default": "warp",
+          "description": "Terminal emulator to launch."
+        },
+        "externalTerminal.reuseTab": {
+          "type": "boolean",
+          "default": true,
+          "description": "Reuse an existing window as a new tab when the terminal supports it."
+        },
+        "externalTerminal.executablePaths": {
+          "type": "object",
+          "default": {},
+          "description": "Optional per-terminal executable path override, keyed by terminal id (warp, windows-terminal, wezterm, alacritty, kitty). Leave a terminal unset to use its default."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "compile": "node esbuild.js",
+    "watch": "node esbuild.js --watch",
+    "package": "node esbuild.js --production",
+    "compile-tests": "tsc -p . --outDir out",
+    "pretest": "npm run compile-tests && npm run compile",
+    "test": "vscode-test",
+    "lint": "eslint src",
+    "vscode:prepublish": "npm run package"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.85.0",
+    "@types/node": "^20.11.0",
+    "@types/mocha": "^10.0.6",
+    "@typescript-eslint/eslint-plugin": "^7.0.0",
+    "@typescript-eslint/parser": "^7.0.0",
+    "@vscode/test-electron": "^2.3.9",
+    "@vscode/test-cli": "^0.0.6",
+    "esbuild": "^0.25.0",
+    "eslint": "^8.56.0",
+    "mocha": "^10.3.0",
+    "typescript": "^5.3.3"
+  },
+  "overrides": {
+    "serialize-javascript": "^7.0.5"
+  }
+}
