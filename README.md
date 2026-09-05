@@ -9,6 +9,15 @@ Open Warp, Windows Terminal, WezTerm, Alacritty or kitty at the workspace root w
 - **Custom executable path** — point each terminal at a non-standard install location.
 - **Terminal-agnostic** — Warp, Windows Terminal, WezTerm, Alacritty, kitty.
 
+## Requirements
+
+- VS Code 1.85+
+- At least one of Warp, Windows Terminal, WezTerm, Alacritty, or kitty installed
+
+## Installation
+
+Install from the `.vsix` (see [Development](#development)) via **Extensions → ⋯ → Install from VSIX...**, or from the VS Code Marketplace once published.
+
 ## Commands
 
 | Command | Description |
@@ -37,3 +46,11 @@ npm test      # run unit tests
 npm run lint  # eslint
 npm run package && npx vsce package  # build a .vsix
 ```
+
+## License
+
+[MIT](LICENSE)
+
+## Author
+
+**Jefferson Gonçalves** — [GitHub](https://github.com/jeffersongoncalves)
