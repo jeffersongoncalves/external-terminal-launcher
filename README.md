@@ -1,6 +1,6 @@
-# External Terminal Launcher
-
 ![External Terminal Launcher](banners/external-terminal-launcher.png)
+
+# External Terminal Launcher
 
 Open Warp, Windows Terminal, WezTerm, Alacritty or kitty at the workspace root without leaving VSCode.
 
