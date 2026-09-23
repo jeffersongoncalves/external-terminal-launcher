@@ -14,11 +14,20 @@
   },
   "homepage": "https://github.com/jeffersongoncalves/external-terminal-launcher#readme",
   "icon": "resources/icon.png",
-  "keywords": ["terminal", "warp", "windows-terminal", "wezterm", "alacritty", "kitty"],
+  "keywords": [
+    "terminal",
+    "warp",
+    "windows-terminal",
+    "wezterm",
+    "alacritty",
+    "kitty"
+  ],
   "engines": {
     "vscode": "^1.85.0"
   },
-  "categories": ["Other"],
+  "categories": [
+    "Other"
+  ],
   "activationEvents": [
     "onStartupFinished"
   ],
@@ -34,7 +43,9 @@
     ],
     "menus": {
       "commandPalette": [
-        { "command": "externalTerminal.open" }
+        {
+          "command": "externalTerminal.open"
+        }
       ]
     },
     "configuration": {
@@ -42,8 +53,20 @@
       "properties": {
         "externalTerminal.selectedTerminalId": {
           "type": "string",
-          "enum": ["warp", "windows-terminal", "wezterm", "alacritty", "kitty"],
-          "enumDescriptions": ["Warp", "Windows Terminal", "WezTerm", "Alacritty", "kitty"],
+          "enum": [
+            "warp",
+            "windows-terminal",
+            "wezterm",
+            "alacritty",
+            "kitty"
+          ],
+          "enumDescriptions": [
+            "Warp",
+            "Windows Terminal",
+            "WezTerm",
+            "Alacritty",
+            "kitty"
+          ],
           "default": "warp",
           "description": "Terminal emulator to launch."
         },
@@ -71,17 +94,18 @@
     "vscode:prepublish": "npm run package"
   },
   "devDependencies": {
-    "@types/vscode": "^1.137.0",
-    "@types/node": "^26.6.1",
+    "@eslint/js": "^10.0.1",
     "@types/mocha": "^10.0.6",
+    "@types/node": "^26.6.1",
+    "@types/vscode": "^1.137.0",
     "@typescript-eslint/eslint-plugin": "^8.70.0",
     "@typescript-eslint/parser": "^8.67.0",
-    "@vscode/test-electron": "^3.1.0",
     "@vscode/test-cli": "^0.0.15",
+    "@vscode/test-electron": "^3.1.0",
     "esbuild": "^0.28.2",
     "eslint": "^10.10.0",
     "mocha": "^12.0.1",
-    "typescript": "^7.0.2"
+    "typescript": "~6.0.3"
   },
   "overrides": {
     "serialize-javascript": "^7.0.5"
